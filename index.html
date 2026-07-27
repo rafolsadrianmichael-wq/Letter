@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>For Angel Leah Marie 🌹</title>
+  <link
+  href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;1,400&family=Lato:wght@300;400&display=swap"
+  rel="stylesheet"
+/>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    background-color: #1a0a0e;
+    color: #f5e6ea;
+    font-family: 'Lato', sans-serif;
+    font-weight: 300;
+    overflow-x: hidden;
+  }
+
+  /* --- Floating petals --- */
+  .petal {
+    position: fixed;
+    width: 10px; height: 14px;
+    background: #d4849a;
+    border-radius: 60% 40% 60% 40% / 50% 50% 50% 50%;
+    opacity: 0;
+    animation: fall linear infinite;
+    pointer-events: none;
+    z-index: 0;
+  }
+  @keyframes fall {
+    0%   { transform: translateY(-20px) rotate(0deg);   opacity: 0.7; }
+    100% { transform: translateY(110vh) rotate(360deg); opacity: 0; }
+  }
+
+  /* --- Hero section --- */
+  .hero {
+    position: relative;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 3rem 2rem;
+    background: radial-gradient(ellipse at center, #3d0f1f 0%, #1a0a0e 70%);
+    z-index: 1;
+  }
+  .rose-icon {
+    font-size: 3rem;
+    margin-bottom: 1.5rem;
+    animation: pulse 3s ease-in-out infinite;
+  }
+  @keyframes pulse {
+    0%, 100% { transform: scale(1); }
+    50%       { transform: scale(1.08); }
+  }
+  .tagline {
+    font-size: 0.85rem;
+    letter-spacing: 0.35em;
+    color: #c4849a;
+    text-transform: uppercase;
+    margin-bottom: 1.2rem;
+  }
+  .hero h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(2.2rem, 6vw, 4rem);
+    font-weight: 400;
+    color: #fde8ef;
+    line-height: 1.2;
+  }
+  .hero h1 em { font-style: italic; color: #f0afc4; }
+
+  .divider {
+    width: 60px; height: 1px;
+    background: linear-gradient(to right, transparent, #c4849a, transparent);
+    margin: 1.8rem auto;
+  }
+  .date-badge {
+    font-size: 0.8rem;
+    letter-spacing: 0.2em;
+    color: #b89aa8;
+    text-transform: uppercase;
+    margin-bottom: 0.4rem;
+  }
+  .date-label {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.3rem;
+    color: #f0afc4;
+  }
+  .scroll-hint {
+    position: absolute;
+    bottom: 2rem; left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.4rem;
+    color: #8a6070;
+    font-size: 0.72rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    animation: bounce 2s ease-in-out infinite;
+  }
+  @keyframes bounce {
+    0%, 100% { transform: translateX(-50%) translateY(0); }
+    50%       { transform: translateX(-50%) translateY(6px); }
+  }
+
+  /* --- Content sections --- */
+  .section {
+    position: relative;
+    z-index: 1;
+    padding: 5rem 2rem;
+    max-width: 760px;
+    margin: 0 auto;
+  }
+  .section-label {
+    font-size: 0.75rem;
+    letter-spacing: 0.35em;
+    text-transform: uppercase;
+    color: #c4849a;
+    text-align: center;
+    margin-bottom: 0.8rem;
+  }
+  .section-title {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(1.6rem, 4vw, 2.4rem);
+    font-weight: 400;
+    color: #fde8ef;
+    text-align: center;
+    line-height: 1.3;
+  }
+
+  /* --- Love letter card --- */
+  .letter-card {
+    background: rgba(255,255,255,0.03);
+    border: 0.5px solid rgba(196,132,154,0.25);
+    border-radius: 16px;
+    padding: 3rem 2.5rem;
+    margin-top: 2.5rem;
+    position: relative;
+  }
+  .letter-card::before {
+    content: '\201C';
+    position: absolute;
+    top: 1.2rem; left: 2rem;
+    font-family: 'Playfair Display', serif;
+    font-size: 5rem;
+    color: rgba(196,132,154,0.2);
+    line-height: 1;
+  }
+  .letter-text {
+    font-size: 1.05rem;
+    line-height: 2;
+    color: #ddc8d0;
+    padding-top: 1.5rem;
+  }
+  .letter-text p { margin-bottom: 1.4rem; }
+  .letter-sign {
+    margin-top: 2rem;
+    text-align: right;
+    font-family: 'Playfair Display', serif;
+    font-style: italic;
+    color: #f0afc4;
+    font-size: 1.1rem;
+  }
+
+  /* --- Photo gallery --- */
+  .gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+    margin-top: 2.5rem;
+  }
+  .photo-slot {
+    aspect-ratio: 1;
+    background: rgba(255,255,255,0.04);
+    border: 0.5px dashed rgba(196,132,154,0.3);
+    border-radius: 12px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    color: #8a6070;
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    text-align: center;
+    padding: 1rem;
+  }
+  .photo-slot img {
+    width: 100%; height: 100%;
+    object-fit: cover;
+    border-radius: 10px;
+  }
+  .photo-icon { font-size: 1.6rem; opacity: 0.5; }
+
+  /* --- Footer --- */
+  footer {
+    position: relative;
+    z-index: 1;
+    text-align: center;
+    padding: 4rem 2rem 3rem;
+    border-top: 0.5px solid rgba(196,132,154,0.15);
+  }
+  footer p {
+    font-family: 'Playfair Display', serif;
+    font-size: 1rem;
+    color: #c4849a;
+    font-style: italic;
+    margin-bottom: 0.5rem;
+  }
+  footer small { font-size: 0.75rem; color: #5a3a44; letter-spacing: 0.1em; }
+
+  /* --- Mobile responsive --- */
+  @media (max-width: 480px) {
+    .gallery-grid { grid-template-columns: repeat(2, 1fr); }
+    .letter-card  { padding: 2rem 1.5rem; }
+  }
+</style>
+</head>
+<body>
+
+<section class="hero">
+  <div class="rose-icon">🌹</div>
+  <p class="tagline">A message from the heart</p>
+  <h1>For my <em>Angel</em>,<br />Leah Marie</h1>
+  <div class="divider"></div>
+  <p class="date-badge">Our anniversary</p>
+  <p class="date-label">July 20</p>
+  <div class="scroll-hint">
+    <span>Scroll</span>
+    <span>↓</span>
+  </div>
+</section>
+<section class="section">
+  <p class="section-label">From Adrian, with love</p>
+  <h2 class="section-title">A letter I've been meaning<br />to write</h2>
+
+  <div class="letter-card">
+    <div class="letter-text">
+      <p>My dearest Angel,</p>
+      <p>There are moments in life that quietly change everything — and meeting you
+      was one of them. You stepped into my world and made it softer, brighter,
+      and infinitely more worth living. I didn't know I needed someone like you
+      until you were already there, and now I cannot imagine a single day without you.</p>
+      <p>You have this incredible, almost magical way of making me feel like a better
+      version of myself. You didn't just love me — you believed in me, you pushed me
+      gently when I needed it, and you stayed by my side when things were hard.
+      Because of you, I've become someone I'm proud of. That is a gift I will never
+      be able to repay.</p>
+      <p>Angel, you are far more amazing than you know. The way you love — so genuinely,
+      so fully — is rare in this world. You are extraordinary.</p>
+      <p>I want you to know: I am not letting you go. Not now, not ever. You are the
+      reason I wake up with something to look forward to. You are my peace, my sunshine,
+      and the one person I want beside me through everything life brings.</p>
+      <p>Thank you for existing. Thank you for choosing me. I love you more than words
+      have ever been able to hold.</p>
+    </div>
+    <div class="letter-sign">Forever yours, Adrian Michael 🌹</div>
+  </div>
+</section>
+<section class="section" style="padding-top: 1rem;">
+  <p class="section-label">Our memories</p>
+  <h2 class="section-title">Moments I treasure</h2>
+
+  <div class="gallery-grid">
+    <div class="photo-slot">
+      <img src="img/cutie.jpeg" alt="Angel and me" />
+    </div>
+    <div class="photo-slot">
+  <img src="img/us.jpg" alt="Angel and me" />
+</div>
+    <div class="photo-slot">
+      <img src="img/baby.jpeg" alt="Angel and me" />
+    </div>
+    <div class="photo-slot">
+      <img src="img/babycute.jpeg" alt="Angel and me" />
+    </div>
+    <div class="photo-slot">
+      <img src="img/aysusus.jpeg" alt="Angel and me" />
+    </div>
+    <div class="photo-slot">
+      <img src="img/mwhehe.jpeg" alt="Angel and me" />
+    </div>
+  </div>
+</section>
+
+</body>
+<footer>
+  <p>"You are the best thing that ever happened to me."</p>
+  <small>Made with love · Adrian Michael &amp; Angel Leah Marie · July 20</small>
+</footer>
+
+<script>
+  // This creates the floating rose petals
+  const colors = ['#d4849a', '#e8a8bc', '#c47090', '#f0c0d0'];
+
+  for (let i = 0; i < 18; i++) {
+    const petal = document.createElement('div');
+    petal.className = 'petal';
+    petal.style.left             = Math.random() * 100 + 'vw';
+    petal.style.animationDuration = (8 + Math.random() * 10) + 's';
+    petal.style.animationDelay   = (Math.random() * 10) + 's';
+    const size = 8 + Math.random() * 8;
+    petal.style.width    = size + 'px';
+    petal.style.height   = (size * 1.4) + 'px';
+    petal.style.background = colors[Math.floor(Math.random() * colors.length)];
+    document.body.appendChild(petal);
+  }
+</script>
+</html>
